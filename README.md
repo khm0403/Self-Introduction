@@ -58,9 +58,9 @@
 | 스크롤 애니메이션 | `IntersectionObserver`로 화면에 들어온 요소를 fade-in (**threshold 0.2**) |
 
 ### GitHub API 연동
-- 엔드포인트 `https://api.github.com/users/khm0403/repos?sort=updated&per_page=100`
+- 엔드포인트 `https://api.github.com/users/khm0403/repos`
 - `fetch` + `async/await` + `try/catch`
-- fork한 저장소는 `filter`로 제외하고, `map`으로 카드 HTML 생성
+- `map`으로 저장소 데이터를 카드 HTML로 변환
 - **4가지 상태를 모두 UI로 표현**
 
 | 상태 | 화면 |
@@ -78,7 +78,6 @@
 ### 폼 유효성 검사
 - 필수값 검증 (이름 / 이메일 / 메시지)
 - 이메일 형식 검증 — `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
-- 메시지 최소 10자
 - 에러 메시지를 **해당 입력 필드 바로 아래**에 표시하고 테두리를 빨갛게 변경
 - 제출 시 `event.preventDefault()`로 새로고침을 막고 성공 메시지 표시
 - 한 번 에러가 난 필드는 입력하는 즉시 재검증 (`input` 이벤트)
@@ -91,7 +90,7 @@
 |------|------|
 | 마크업 | HTML5 시맨틱 태그 (`header` `nav` `main` `section` `article` `footer`) |
 | 스타일 | CSS3 — 사용자 정의 속성(변수), Flexbox, Grid, 미디어쿼리, 트랜지션, `@keyframes` |
-| 스크립트 | JavaScript ES6+ — `const/let`, 화살표 함수, 템플릿 리터럴, 구조분해 할당, `map`/`filter`/`forEach`, `async/await` |
+| 스크립트 | JavaScript ES6+ — `const/let`, 화살표 함수, 템플릿 리터럴, 구조분해 할당, `map`/`forEach`, `async/await` |
 | 브라우저 API | `fetch`, `localStorage`, `IntersectionObserver` |
 | 외부 데이터 | GitHub REST API v3 |
 | 접근성 | `aria-label`, `aria-expanded`, `aria-controls`, `aria-live`, `role="alert"`, `label` ↔ `input` 연결 |

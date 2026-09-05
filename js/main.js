@@ -176,9 +176,7 @@ const loadProjects = async () => {
   renderLoading();
 
   try {
-    const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`
-    );
+    const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`);
 
     if (!response.ok) {
       if (response.status === 403) {
@@ -191,14 +189,13 @@ const loadProjects = async () => {
     }
 
     const repos = await response.json();
-    const ownRepos = repos.filter((repo) => !repo.fork);
 
-    if (ownRepos.length === 0) {
+    if (repos.length === 0) {
       renderEmpty();
       return;
     }
 
-    renderProjects(ownRepos);
+    renderProjects(repos);
   } catch (error) {
     renderError(error.message || '프로젝트를 불러올 수 없습니다.');
   }
@@ -229,18 +226,20 @@ const formFields = [
   {
     input: document.querySelector('#message'),
     error: document.querySelector('#message-error'),
-    validate: (value) => {
-      if (value.trim() === '') return '메시지를 입력해주세요.';
-      if (value.trim().length < 10) return '메시지를 10자 이상 입력해주세요.';
-      return '';
-    },
+    validate: (value) => (value.trim() === '' ? '메시지를 입력해주세요.' : ''),
   },
 ];
 
 const showFieldError = (field, message) => {
   const hasError = message !== '';
   field.error.textContent = message;
-  field.input.classList.toggle('is-invalid', hasError);
+
+  if (hasError) {
+    field.input.classList.add('is-invalid');
+  } else {
+    field.input.classList.remove('is-invalid');
+  }
+
   field.input.setAttribute('aria-invalid', String(hasError));
 };
 

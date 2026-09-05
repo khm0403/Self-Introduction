@@ -19,8 +19,8 @@
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.14);
 
   /* 폰트 */
-  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont,
-               "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+               "Malgun Gothic", "Noto Sans KR", sans-serif;
   --fs-sm:   0.875rem;
   --fs-base: 1rem;
   --fs-lg:   1.125rem;
