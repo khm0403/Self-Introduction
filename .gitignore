@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# 미리보기 서버 설정 (로컬 전용)
+.claude/
+
+# 미션 원문 PDF — 저장소에 올리지 않는다
+*.pdf
+
+# 작업용 참고 파일
+reference/

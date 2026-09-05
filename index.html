@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>김현민| Portfolio</title>
+  <meta name="description" content="웹 프론트엔드를 공부하는 김현민의 포트폴리오입니다.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="header" id="header">
+    <nav class="nav" aria-label="주 메뉴">
+
+      <a href="#home" class="nav__logo">김현민</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li class="nav__item"><a href="#home"     class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#about"    class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#skills"   class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#contact"  class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 전환">
+          <span class="theme-toggle__icon" id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <button type="button" class="nav__toggle" id="nav-toggle"
+                aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+
+        <p class="hero__greeting">Hello, World!</p>
+
+        <h1 class="hero__title">
+          저는 <span class="hero__name">김현민</span>입니다.
+        </h1>
+
+        <p class="hero__desc">
+          웹 프론트엔드를 공부하며 배운 것을 코드로 남기고 있습니다.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact"  class="btn btn--outline">Contact</a>
+        </div>
+
+      </div>
+    </section>
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about section" id="about">
+      <div class="container">
+
+        <h2 class="section__title">About Me</h2>
+
+        <div class="about__content">
+
+          <img class="about__photo"
+               src="images/profile-placeholder.svg"
+               alt="김현민의 프로필 사진"
+               width="400" height="400">
+
+          <div class="about__text">
+            <p>
+              안녕하세요, 웹 프론트엔드를 공부하고 있는 김현민입니다.
+              화면에 보이는 것이 코드로 어떻게 만들어지는지가 궁금해서 시작했고,
+              지금은 HTML·CSS·JavaScript로 직접 만들어보며 배우고 있습니다.
+            </p>
+            <p>
+              배운 내용은 GitHub에 기록하고 있습니다.
+              아래 Projects 섹션은 제 저장소를 실시간으로 불러온 것입니다.
+            </p>
+
+            <ul class="about__facts">
+              <li><strong>관심 분야</strong> 프론트엔드 / UI</li>
+              <li><strong>현재 학습</strong> HTML · CSS · JavaScript</li>
+              <li><strong>목표</strong> React로 나만의 서비스 만들기</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="skills section" id="skills">
+      <div class="container">
+
+        <h2 class="section__title">Skills</h2>
+        <p class="section__subtitle">지금까지 다뤄본 기술들입니다.</p>
+
+        <div class="skills__groups">
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Frontend</h3>
+            <ul class="skill-card__list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Tools</h3>
+            <ul class="skill-card__list">
+              <li>VS Code</li>
+              <li>Chrome DevTools</li>
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3 class="skill-card__title">Learning</h3>
+            <ul class="skill-card__list">
+              <li>JavaScript (ES6+)</li>
+              <li>Git &amp; GitHub</li>
+              <li>React</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS (GitHub API) ==================== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+
+        <h2 class="section__title">Projects</h2>
+        <p class="section__subtitle">GitHub 저장소를 실시간으로 불러옵니다.</p>
+
+        <div class="projects__status" id="projects-status" aria-live="polite"></div>
+
+        <div class="projects__grid" id="projects-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+
+        <h2 class="section__title">Contact</h2>
+        <p class="section__subtitle">궁금한 점이 있다면 남겨주세요.</p>
+
+        <form class="form" id="contact-form" novalidate>
+
+          <div class="form__field">
+            <label class="form__label" for="name">이름</label>
+            <input class="form__input" type="text" id="name" name="name"
+                   placeholder="홍길동" autocomplete="name">
+            <p class="form__error" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="email">이메일</label>
+            <input class="form__input" type="email" id="email" name="email"
+                   placeholder="you@example.com" autocomplete="email">
+            <p class="form__error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="message">메시지</label>
+            <textarea class="form__input form__textarea" id="message" name="message"
+                      rows="5" placeholder="내용을 입력해주세요."></textarea>
+            <p class="form__error" id="message-error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn--primary form__submit">Send</button>
+
+          <p class="form__success" id="form-success" role="status"></p>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <p class="footer__copy">&copy; 2026 김현민. All rights reserved.</p>
+
+      <ul class="footer__social">
+        <li><a href="https://github.com/khm0403" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:inkwon73@gmail.com">Email</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- 스크롤 300px 이상에서 나타남 -->
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로 이동">
+    <span aria-hidden="true">↑</span>
+  </button>
+</body>
+</html>
