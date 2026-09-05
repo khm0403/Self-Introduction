@@ -7,7 +7,7 @@
 
 ## 배포 URL
 
-**https://khm0403.github.io/portfolio/**
+**https://khm0403.github.io/Self-Introduction/**
 
 > 아직 배포 전이라면 이 주소는 동작하지 않습니다. GitHub Pages 배포 후 실제 주소로 확인해주세요.
 
@@ -93,8 +93,7 @@
 ├── images/
 │   ├── profile-placeholder.svg
 │   └── screenshots/
-├── README.md
-└── CONCEPTS.md             # 사용된 개념 정리 (학습 기록)
+└── README.md
 ```
 
 ### CSS 구성 순서
@@ -185,8 +184,13 @@ python3 -m http.server 5500
 
 ---
 
-## 배운 것
+## 학습 목표
 
-사용된 개념은 [CONCEPTS.md](CONCEPTS.md)에 정리했습니다.
-HTML 시맨틱 태그 선택 기준부터 Flexbox와 Grid의 차이, DOM 조작과 이벤트 연결,
-비동기 처리와 상태 관리 패턴까지 이 프로젝트에서 실제로 쓴 순서대로 담았습니다.
+이 프로젝트를 통해 아래를 직접 구현하며 익혔습니다.
+
+- HTML 시맨틱 태그의 선택 기준과 문서 구조 설계
+- Flexbox와 Grid의 차이, 그리고 상황별 선택
+- `querySelector`로 DOM을 선택하고 `addEventListener`로 이벤트를 연결하는 흐름
+- 화살표 함수 · 구조분해 할당 · 배열 메서드(`map` / `filter` / `forEach`)의 용도
+- `fetch` + `async/await`로 비동기 데이터를 가져오고 로딩 · 성공 · 실패 상태를 UI로 표현
+- **이벤트 → 상태 변경 → DOM 업데이트**로 하나의 기능을 완성하는 패턴
