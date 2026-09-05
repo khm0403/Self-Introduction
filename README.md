@@ -15,9 +15,28 @@
 
 ## 스크린샷
 
-| 데스크톱 | 모바일 | 다크 모드 |
-|:---:|:---:|:---:|
-| ![데스크톱](images/screenshots/desktop.png) | ![모바일](images/screenshots/mobile.png) | ![다크 모드](images/screenshots/dark.png) |
+### 데스크톱 (1440×900)
+
+![데스크톱 화면 — Hero 섹션](images/screenshots/desktop.png)
+
+### GitHub API 연동 — Projects 섹션
+
+저장소 목록을 `fetch`로 불러와 카드로 렌더링합니다. 언어, 스타 수, 포크 수를 함께 표시합니다.
+
+![Projects 섹션 — GitHub 저장소 카드](images/screenshots/projects.png)
+
+### 다크 모드
+
+토글 버튼으로 전환하며, 설정은 `localStorage`에 저장되어 새로고침 후에도 유지됩니다.
+
+![다크 모드 화면](images/screenshots/dark.png)
+
+### 모바일 (390×844)
+
+768px 미만에서 햄버거 메뉴가 나타나고, Projects 카드는 1열로 배치됩니다.
+
+<img src="images/screenshots/mobile.png" width="320" alt="모바일 화면">
+
 
 ---
 
@@ -92,7 +111,7 @@
 │   └── main.js             # 동작 (300줄)
 ├── images/
 │   ├── profile-placeholder.svg
-│   └── screenshots/
+│   └── screenshots/       # 스크린샷 4장
 └── README.md
 ```
 
