@@ -43,8 +43,6 @@ const formSuccess = document.querySelector('#form-success');
 const setMenuOpen = (isOpen) => {
   navMenu.classList.toggle('active', isOpen);
   navToggle.classList.toggle('active', isOpen);
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-  navToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
 };
 
 navToggle.addEventListener('click', () => {
@@ -94,10 +92,6 @@ const storeTheme = (theme) => {
 const applyTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme);
   themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-  themeToggle.setAttribute(
-    'aria-label',
-    theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'
-  );
 };
 
 applyTheme(readStoredTheme() || 'light');
@@ -126,7 +120,7 @@ const renderLoading = () => {
   projectsGrid.innerHTML = '';
   projectsStatus.innerHTML = `
     <div class="status">
-      <div class="status__spinner" aria-hidden="true"></div>
+      <div class="status__spinner"></div>
       <p>프로젝트를 불러오는 중...</p>
     </div>`;
 };
@@ -239,8 +233,6 @@ const showFieldError = (field, message) => {
   } else {
     field.input.classList.remove('is-invalid');
   }
-
-  field.input.setAttribute('aria-invalid', String(hasError));
 };
 
 // 이미 에러가 뜬 필드는 입력하는 즉시 다시 검사해준다

@@ -93,7 +93,7 @@
 | 스크립트 | JavaScript ES6+ — `const/let`, 화살표 함수, 템플릿 리터럴, 구조분해 할당, `map`/`forEach`, `async/await` |
 | 브라우저 API | `fetch`, `localStorage`, `IntersectionObserver` |
 | 외부 데이터 | GitHub REST API v3 |
-| 접근성 | `aria-label`, `aria-expanded`, `aria-controls`, `aria-live`, `role="alert"`, `label` ↔ `input` 연결 |
+| 접근성 | 모든 이미지 `alt` 속성, `label` ↔ `input` 연결 (for-id 매칭) |
 
 **외부 라이브러리를 일절 사용하지 않았습니다.** (React, Vue, jQuery, Bootstrap, Tailwind 모두 미사용)
 
@@ -103,11 +103,11 @@
 
 ```
 .
-├── index.html              # 페이지 전체 (212줄)
+├── index.html              # 페이지 전체 (211줄)
 ├── css/
-│   └── style.css           # 스타일시트 (820줄)
+│   └── style.css           # 스타일시트 (802줄)
 ├── js/
-│   └── main.js             # 동작 (300줄)
+│   └── main.js             # 동작 (291줄)
 ├── images/
 │   ├── profile-placeholder.svg
 │   └── screenshots/       # 스크린샷 4장
@@ -124,7 +124,7 @@
  6. 헤더 / 네비게이션         15. 다크 모드 (변수 재정의)
  7. Hero                      16. 반응형 768px
  8. About                     17. 반응형 1024px
- 9. Skills                    18. 모션 최소화 설정 존중
+ 9. Skills
 ```
 
 ### JS 구성 순서
@@ -171,7 +171,7 @@ const THEME_STORAGE_KEY = 'portfolio-theme';
 | 1 | 토글 버튼 `click` | `data-theme` = `light` / `dark` + localStorage | CSS 변수가 통째로 교체되어 전체 색상 전환 |
 | 2 | 페이지 로드 / 재시도 `click` | 로딩 → 성공 · 에러 · 빈 상태 | Projects 섹션 내용 교체 |
 | 3 | 폼 `submit` / `input` | 필드별 에러 메시지 문자열 | 에러 문구 표시·숨김 + 테두리 색 변경 |
-| 4 | 햄버거 `click` | `.active` 클래스 + `aria-expanded` | 서랍 메뉴 열림/닫힘 + 버튼 X자 변형 |
+| 4 | 햄버거 `click` | `.active` 클래스 | 서랍 메뉴 열림/닫힘 + 버튼 X자 변형 |
 
 각 흐름은 **상태를 바꾸는 함수**와 **상태를 보고 그리는 함수**가 분리되어 있습니다.
 예를 들어 다크 모드는 `applyTheme(theme)` 하나만 화면을 그리고, 클릭 핸들러는 다음 상태를 계산해 넘기기만 합니다.

@@ -800,21 +800,3 @@ main {
   }
 }
 
-/* =========================================================
-   18. 모션 최소화 설정 존중
-   ========================================================= */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .status__spinner {
-    animation: none;
-  }
-}
